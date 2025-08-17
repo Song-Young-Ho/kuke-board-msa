@@ -1,5 +1,6 @@
 package kuke.board.comment.controller;
 
+import kuke.board.comment.service.response.CommentPageResponse;
 import kuke.board.comment.service.response.CommentResponse;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -48,35 +49,36 @@ public class CommentApiTest {
                 .retrieve();
     }
 
-//    @Test
-//    void readAll() {
-//        CommentPageResponse response = restClient.get()
-//                .uri("/v1/comments?articleId=1&page=1&pageSize=10")
-//                .retrieve()
-//                .body(CommentPageResponse.class);
-//
-//        System.out.println("response.getCommentCount() = " + response.getCommentCount());
-//        for (CommentResponse comment : response.getComments()) {
-//            if (!comment.getCommentId().equals(comment.getParentCommentId())) {
-//                System.out.print("\t");
-//            }
-//            System.out.println("comment.getCommentId() = " + comment.getCommentId());
-//        }
-//
-//        /**
-//         * 1번 페이지 수행 결과
-//         * comment.getCommentId() = 123693535103893504
-//         * 	comment.getCommentId() = 123693535468797952
-//         * 	comment.getCommentId() = 123693535527518208
-//         * comment.getCommentId() = 123696314740150272
-//         * 	comment.getCommentId() = 123696314773704717
-//         * comment.getCommentId() = 123696314740150273
-//         * 	comment.getCommentId() = 123696314777899028
-//         * comment.getCommentId() = 123696314740150274
-//         * 	comment.getCommentId() = 123696314773704705
-//         * comment.getCommentId() = 123696314740150275
-//         */
-//    }
+    @Test
+    void readAll() {
+        CommentPageResponse response = restClient.get()
+                .uri("/v1/comments?articleId=1&page=50000&pageSize=10")
+                .retrieve()
+                .body(CommentPageResponse.class);
+
+        System.out.println("response.getCommentCount() = " + response.getCommentCount());
+        for (CommentResponse comment : response.getComments()) {
+            if (!comment.getCommentId().equals(comment.getParentCommentId())) {
+                System.out.print("\t");
+            }
+            System.out.println("comment.getCommentId() = " + comment.getCommentId());
+        }
+
+        /**
+         * 1번 페이지 수행 결과
+         * comment.getCommentId() = 215040350068211712
+         * 	comment.getCommentId() = 215040351829819392
+         * 	comment.getCommentId() = 215040351959842816
+         * comment.getCommentId() = 215040514434596864
+         * 	comment.getCommentId() = 215040515046965248
+         * secondPage
+         * 	comment.getCommentId() = 215040515156017152
+         * comment.getCommentId() = 215042091291480064
+         * 	comment.getCommentId() = 215042091434086407
+         * comment.getCommentId() = 215042091291480065
+         * 	comment.getCommentId() = 215042091459252234
+         */
+    }
 
     @Test
     void readAllInfiniteScroll() {
