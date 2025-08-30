@@ -1,2 +1,18 @@
 server:
   port: 9002
+
+spring:
+  application:
+    name: like-service
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/article-like
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    open-in-view: false
+    show-sql: false
+    hibernate:
+      ddl-auto: none
