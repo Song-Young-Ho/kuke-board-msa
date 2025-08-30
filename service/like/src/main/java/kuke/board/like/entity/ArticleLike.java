@@ -1,4 +1,4 @@
-package entity;
+package kuke.board.like.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

@@ -1,6 +1,6 @@
-package service.response;
+package kuke.board.like.service.response;
 
-import entity.ArticleLike;
+import kuke.board.like.entity.ArticleLike;
 import lombok.Getter;
 import lombok.ToString;
 

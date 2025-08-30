@@ -1,6 +1,6 @@
-package repository;
+package kuke.board.like.repository;
 
-import entity.ArticleLike;
+import kuke.board.like.entity.ArticleLike;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
