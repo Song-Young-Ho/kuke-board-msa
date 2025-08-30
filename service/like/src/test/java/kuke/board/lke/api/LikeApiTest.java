@@ -1,8 +1,8 @@
 package kuke.board.lke.api;
 
 import org.junit.jupiter.api.Test;
+import kuke.board.like.service.response.ArticleLikeResponse;
 import org.springframework.web.client.RestClient;
-import service.response.ArticleLikeResponse;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
