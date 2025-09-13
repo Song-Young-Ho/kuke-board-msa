@@ -25,6 +25,7 @@ public class HotArticleEventConsumer {
     public void listen(String message, Acknowledgment ack) {
         log.info("[HotArticleEventConsumer.listen] received message={}", message);
         Event<EventPayload> event = Event.fromJson(message);
+        log.info("[HotArticleEventConsumer.listen] event={}", event);
         if (event != null) {
             hotArticleService.handleEvent(event);
         }

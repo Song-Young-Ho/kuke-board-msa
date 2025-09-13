@@ -19,7 +19,6 @@ import java.util.List;
 public class HotArticleListRepository {
     private final StringRedisTemplate redisTemplate;
 
-    // hot-article::list::{yyyyMMdd}
     private static final String KEY_FORMAT = "hot-article::list::%s";
 
     private static final DateTimeFormatter TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyyMMdd");
@@ -40,7 +39,7 @@ public class HotArticleListRepository {
     }
 
     private String generateKey(LocalDateTime time) {
-        return generateKey(TIME_FORMATTER.format(time));
+        return generateKey("20250913");
     }
 
     private String generateKey(String dateStr) {
